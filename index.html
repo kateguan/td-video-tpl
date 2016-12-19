@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TD-video-tpl</title>
+    <meta name="description" content="TD-video-tpl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script type="text/javascript">
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+
+                var clientWidth = docEl.clientWidth;
+                var clientHeight = docEl.clientHeight;
+                if (!clientWidth) return;
+                if((clientWidth/clientHeight)>(750/1200)){
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientHeight / 1200) + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        recalc();
+    })(document, window);
+    </script>
+</head>
+<body>
+    <div class="m-wrap">
+
+        <!-- loading/开始页 -->
+        <div class="m-loading abs"  ontouchstart="_czc.push(['_trackEvent', 'play', '开始页'])">
+            <div class="loading-box abcter">
+                <div class="loadProcess">
+                    <div class="inner">1</div>
+                </div>
+                <div class="btn-play"></div>
+            </div>
+        </div>
+
+        <!-- 结束页 -->
+        <div class="m-end abs">
+            <div class="landing-box abcter sizcon">
+                <div class="btn-wrap">
+                    <div class="btn-toShare btn" ontouchstart="_czc.push(['_trackEvent', 'share', '落地页'])">btnShare</div>
+                    <div class="btn-seeAgain btn" ontouchstart="_czc.push(['_trackEvent', 'again', '落地页'])">btnAgain</div>
+                </div>
+            </div>
+
+            <!-- 分享蒙版 -->
+            <div class="share-wrap abs">
+                <div class="share-img sizcon"></div>
+            </div>
+        </div>
+
+        <!-- 视频页 -->
+        <div class="m-video abs">
+            <video class="video-main abs" width="750" height="1200" webkit-playsinline playsinline src="http://7xvl2z.com1.z0.glb.clouddn.com/nigg2.mp4"></video>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="dist/js/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="dist/js/main.js"></script>
+    <!-- cnzz统计，根据实际注册情况去替换‘1259179479’ -->
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259179479'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259179479' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        $("#cnzz_stat_icon_1259179479").hide();
+    </script>
+</body>
+</html>
